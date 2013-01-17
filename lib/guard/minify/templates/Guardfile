@@ -1,0 +1,1 @@
+guard 'minify', :input => 'app/assets/javascripts/application.js', :output => "public/javascripts/application.js"
