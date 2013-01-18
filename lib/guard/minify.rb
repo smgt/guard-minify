@@ -52,10 +52,10 @@ module Guard
 
     def minify(file)
       begin
-        uglified = Uglifier.new.compile(File.read(file))
+        minify = Minify.new(file, @options)
         #File.open(@output,'w'){ |f| f.write(uglified) }
-        uglified_path = write_file(uglified, options[:output], file)
-        msg = "Uglified #{File.basename(file)} -> #{File.basename(uglified_path)}"
+        path = write_file(minify.render, @options[:output], file)
+        msg = "Compiled #{File.basename(file)} -> #{File.basename(uglified_path)} (#{minify.class})"
         ::Guard::UI.info msg
         ::Guard::Notifier.notify msg, :title => 'Guard::Minify'
         true
@@ -68,7 +68,7 @@ module Guard
     end
 
     def write_file(content, dir, file)
-      path = File.join(dir, File.basename(file, '.*')) << options[:extension]
+      path = File.join(dir, File.basename(file, '.*')) << @options[:extension]
       File.open(path, 'w') {|f| f.write(content) }
       path
     end
