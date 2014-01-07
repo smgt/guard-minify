@@ -32,8 +32,10 @@ Guard::Minify can be adapted to all kind of projects.
 
 Typical Rails 3 app (default generated Guardfile)
 
+```ruby
 guard 'minify', :input => 'app/assets/javascript', :output => "public/javascripts", :extension => ".min.js"
 guard 'minify', :input => 'app/asses/css', :output => 'public/css', :extension => ".min.css"
+```
 
 Please [read Guard]( https://github.com/guard/guard#readme ) doc for more information about the Guardfile DSL.
 
