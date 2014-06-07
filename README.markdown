@@ -2,7 +2,7 @@
 
 ## About
 
-Compress your Javascript uglifier, Google closure-compiler or YUI-compressor and your CSS with YUI-compressor.
+Compress your Javascript with uglifier, Google closure-compiler or YUI-compressor and your CSS with YUI-compressor.
 
 ## Install
 
